@@ -1,0 +1,34 @@
+logging:
+  level:
+    .: error
+    org.springframework: ERROR
+    com.javabycode: ERROR
+
+spring:
+  profiles:
+    active: "prod"
+  main:
+    banner-mode: "off"
+
+---
+
+spring:
+  profiles: dev
+server:
+  email: dev@javabycode.com
+  ip: 127.0.0.1
+  path: /localhost
+
+---
+
+spring:
+  profiles: prod
+server:
+  email: prod@javabycode.com
+  ip: 192.168.0.1
+  path: /javabycode.com
+logging:
+  level:
+    .: error
+    org.springframework: ERROR
+    com.javabycode: ERROR
